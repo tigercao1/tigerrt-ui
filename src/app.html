@@ -1,3 +1,20 @@
-<template>
-  <h1>${message}</h1>
+
+<template class="main-page">
+  <require from="./app.scss"></require>
+
+  <nav class="nav-bar">
+    <div class="nav-wrapper">
+      <div class="container">
+        <a href="#" class="brand-logo"><img src="../assets/logo_image.png" height="50px" width="50px"></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="login">Login</a></li>
+          <li><a href="signup">Sign up</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <router-view></router-view>
+  </div>
 </template>
