@@ -1,7 +1,6 @@
 import environment from './environment';
 import {PLATFORM} from 'aurelia-pal';
 import 'materialize-css';
-import 'aurelia-auth';
 import 'babel-polyfill';
 import config from './authConfig';
 import * as Bluebird from 'bluebird';
@@ -14,10 +13,8 @@ export function configure(aurelia) {
     .standardConfiguration()
     .feature(PLATFORM.moduleName('resources/index'))
     .plugin(PLATFORM.moduleName('aurelia-materialize-bridge'), b => b.useAll())
-    .plugin(PLATFORM.moduleName('aurelia-auth', (baseConfig) => {
-      baseConfig.configure(config);
-    }));
-    
+    .plugin(PLATFORM.moduleName('aurelia-auth'));
+
   // Uncomment the line below to enable animation.
   // aurelia.use.plugin(PLATFORM.moduleName('aurelia-animator-css'));
   // if the css animator is enabled, add swap-order="after" to all router-view elements

@@ -26,7 +26,7 @@
     "aurelia-protractor-plugin": "^1.0.6",
     "aurelia-testing": "^1.0.0-beta.4.0.0",
     "aurelia-tools": "^2.0.0",
-    "aurelia-webpack-plugin": "^3.0.0-rc.1",
+    "aurelia-webpack-plugin": "^3.0.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "7.2.3",
     "babel-loader": "^7.1.4",
@@ -88,7 +88,9 @@
   },
   "scripts": {
     "start": "nps",
-    "test": "nps test"
+    "test": "nps test",
+    "deploy": "aws s3 sync --acl public-read --delete dist/ s3://thehiddentent.com && npm run invalidate",
+    "invalidate": "aws cloudfront create-invalidation --distribution-id E39B6S1ZYTI6VU --paths '/*'"
   },
   "main": "dist/app.bundle.js"
 }
