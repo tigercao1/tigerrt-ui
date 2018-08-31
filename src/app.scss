@@ -3,6 +3,16 @@
 @import "pages/home/home";
 // @import "pages/login/login";
 
+@media only screen {
+    html {
+        background: rgb(196, 227, 253);
+    }
+}
+
+.container {
+    // margin-top: 10px;
+}
+
 .nav-bar {
     background-color: white;
     
